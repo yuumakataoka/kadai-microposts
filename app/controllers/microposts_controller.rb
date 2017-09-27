@@ -1,6 +1,6 @@
 class MicropostsController < ApplicationController
   before_action :require_user_logged_in
-  before_action :correct_user, only: [:destroy]
+  before_action :correct_user, only: [:destroy, :like]
   
   def create
     @micropost = current_user.microposts.build(micropost_params)
@@ -22,7 +22,7 @@ class MicropostsController < ApplicationController
   
   private
   
-  def microposts_params
+  def micropost_params
     params.require(:micropost).permit(:content)
   end
   

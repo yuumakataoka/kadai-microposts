@@ -18,6 +18,7 @@
           <% end %>
         </div>
       </div>
+       <%= render 'likes/like_button', user: user , micropost: micropost  %>
     </li>
   <% end %>
   <%= paginate microposts %>
